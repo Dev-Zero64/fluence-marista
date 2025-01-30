@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import ImageModal from './ImageModal';
+import React, { useState } from "react";
+import ImageModal from "./ImageModal";
 
 interface ImageGalleryProps {
   images: string[];
@@ -11,7 +11,9 @@ const ImageGallery = ({ images, className = "" }: ImageGalleryProps) => {
 
   return (
     <>
-      <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ${className}`}>
+      <div
+        className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ${className}`}
+      >
         {images.map((image, index) => (
           <div
             key={index}

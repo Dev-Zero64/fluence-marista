@@ -1,69 +1,83 @@
-# Welcome to your Lovable project
+# Fluence Marista
 
-## Project info
+Um projeto React TypeScript apresentando uma galeria imobiliária bonita e responsiva com componentes de UI modernos.
 
-**URL**: https://lovable.dev/projects/f3674630-50f9-473a-934b-60f8a8951c66
+## Recursos
 
-## How can I edit this code?
+- Design moderno e responsivo
+- Construído com React e TypeScript
+- Componentes de UI de shadcn/ui
+- Tailwind CSS para estilização
+- Notificações de toast
+- Visualização de galeria em modal
+- Animações e transições suaves
 
-There are several ways of editing your application.
+## Tecnologias
 
-**Use Lovable**
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Componentes shadcn/ui
+- React Router DOM
+- React Query
+- Sonner (notificações de toast)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f3674630-50f9-473a-934b-60f8a8951c66) and start prompting.
+## Começando
 
-Changes made via Lovable will be committed automatically to this repo.
+### Pré-requisitos
 
-**Use your preferred IDE**
+- Node.js 16+
+- npm ou yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Instalação
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+# Clone o repositório
+git clone https://github.com/seuusuario/fluent-modal-gallery.git
 
-Follow these steps:
+# Entre no diretório do projeto
+cd fluent-modal-gallery
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Instale as dependências
+npm install
+# ou
+yarn install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Inicie o servidor de desenvolvimento
 npm run dev
+# ou
+yarn dev
 ```
 
-**Edit a file directly in GitHub**
+A aplicação começará a rodar em http://localhost:8080
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Estrutura do Projeto
 
-**Use GitHub Codespaces**
+```
+src/
+    ├── components/
+    │   ├── ui/          # Componentes shadcn/ui
+    │   ├── Footer.tsx
+    │   ├── ContactForm.tsx
+    │   └── ImageGallery.tsx
+    ├── hooks/           # Hooks React personalizados
+    ├── lib/             # Utilitários e configurações
+    ├── pages/           # Componentes de rota
+    └── App.tsx          # Componente principal da aplicação
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Scripts
 
-## What technologies are used for this project?
+- `npm run dev` - Iniciar servidor de desenvolvimento
+- `npm run build` - Construir para produção
+- `npm run preview` - Visualizar build de produção
+- `npm run lint` - Executar ESLint
 
-This project is built with .
+## Contribuindo
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Contribuições são bem-vindas! Sinta-se à vontade para enviar um Pull Request.
 
-## How can I deploy this project?
+## Licença
 
-Simply open [Lovable](https://lovable.dev/projects/f3674630-50f9-473a-934b-60f8a8951c66) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Este projeto é licenciado sob a Licença MIT - veja o arquivo LICENSE para mais detalhes.

@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { Dialog } from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
-import { 
-  X, 
-  ChevronLeft, 
-  ChevronRight, 
-  Maximize2, 
+import React, { useState } from "react";
+import { Dialog } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import {
+  X,
+  ChevronLeft,
+  ChevronRight,
+  Maximize2,
   Minimize2,
   ZoomIn,
-  ZoomOut
-} from 'lucide-react';
+  ZoomOut,
+} from "lucide-react";
 
 interface ImageModalProps {
   images: string[];
@@ -19,35 +19,48 @@ interface ImageModalProps {
   onNavigate: (index: number) => void;
 }
 
-const ImageModal = ({ 
-  images, 
-  currentIndex, 
-  isOpen, 
-  onClose, 
-  onNavigate 
+const ImageModal = ({
+  images,
+  currentIndex,
+  isOpen,
+  onClose,
+  onNavigate,
 }: ImageModalProps) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(1);
 
   const toggleFullscreen = () => {
     if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
-      setIsFullscreen(true);
+      document.documentElement
+        .requestFullscreen()
+        .then(() => setIsFullscreen(true))
+        .catch(console.error);
     } else {
-      document.exitFullscreen();
-      setIsFullscreen(false);
+      document
+        .exitFullscreen()
+        .then(() => setIsFullscreen(false))
+        .catch(console.error);
     }
   };
 
   const handleZoom = (delta: number) => {
-    setZoomLevel(prev => Math.max(1, Math.min(3, prev + delta)));
+    setZoomLevel((prev) => Math.max(1, Math.min(3, prev + delta)));
+  };
+
+  const handleClose = () => {
+    // Sai do fullscreen ao fechar
+    if (document.fullscreenElement) {
+      document
+        .exitFullscreen()
+        .then(() => setIsFullscreen(false))
+        .catch(console.error);
+    }
+    setZoomLevel(1);
+    onClose();
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={() => {
-      onClose();
-      setZoomLevel(1);
-    }}>
+    <Dialog open={isOpen} onOpenChange={handleClose}>
       <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center">
         <div className="relative w-full h-full flex flex-col">
           {/* Controls */}
@@ -83,7 +96,7 @@ const ImageModal = ({
             <Button
               variant="ghost"
               size="icon"
-              onClick={onClose}
+              onClick={handleClose}
               className="text-white hover:bg-white/20"
             >
               <X className="h-4 w-4" />
@@ -98,7 +111,7 @@ const ImageModal = ({
               className="max-h-full max-w-full object-contain transition-transform duration-200"
               style={{ transform: `scale(${zoomLevel})` }}
             />
-            
+
             {/* Navigation buttons */}
             <Button
               variant="ghost"
