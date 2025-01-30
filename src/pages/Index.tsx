@@ -17,19 +17,19 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
         </div>
         <div className="relative z-10 text-white text-center px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          <h1 className="text-center text-5xl md:text-7xl font-bold mb-6 font-['Montserrat']">
             Fluence Marista
           </h1>
-          <p className="text-xl md:text-2xl mb-8">
+          <p className="text-xl md:text-2xl mb-8 font-['Montserrat']">
             Em cada detalhe, um motivo para viver os melhores momentos
           </p>
           <ContactForm />
         </div>
       </header>
       {/* Gallery Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-[#f8f4f1] to-white">
+      <section className="py-20 px-4 bg-black">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl text-white font-bold text-center mb-12">
             Ambientes para Conviver e Compartilhar o seu Melhor
           </h2>
           <ImageGallery images={galleryImages} />

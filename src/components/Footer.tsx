@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-[#d19458] text-white py-8 px-4">
+    <footer className="bg-[#d19458] text-white py-8 px-4 font-['Montserrat']">
       <img
         src="https://fluencemarista.cim.br/wp-content/uploads/2022/11/33915941-0-VALUS-BRANCA-1.webp"
         alt="Logo Fluence Marista"
